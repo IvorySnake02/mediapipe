@@ -9,7 +9,7 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5) a
     while cap.isOpened():
         ret, frame = cap.read()
 
-        image = cv2.cvtColor(frame, cv2.COLOR_BGG2RGB)
+        image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         image.flags.writeable = False
         results = hands.process(image)
         image.flags.writeable = True
